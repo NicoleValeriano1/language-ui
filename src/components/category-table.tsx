@@ -1,16 +1,9 @@
 import React,{useState,useEffect} from "react";
 import {Link} from "react-router-dom";
-
+import { useHistory } from "react-router-dom";
 import {getCategoriesWLanguages, deleteCategory} from "../services/categories";
 import Modal from "./modal";
 
-interface ICardProps{
-
-    
-    
-    btn_labelL?: string,
-    categoryId?:string
-}
 
 const CategoryTable: React.FC = () => {
     
@@ -26,10 +19,14 @@ const CategoryTable: React.FC = () => {
     const [completed,setCompleted] = useState(false);
      
 
+ const history = useHistory();
+
     function hideModal(){
         setShowmodal(false);
     }
-
+    function showCTA(event:any){
+        history.push(`/category/${event.target.id}`);
+    }
     function showModal(event:any){
         console.log(event.target);
         setCategoryId(event.target.id);
@@ -116,11 +113,7 @@ const CategoryTable: React.FC = () => {
                                 <button type="button"className="btn btn-info"onClick={showModal} id={data._id}>Delete</button>
                             </td>
                             <td>
-                            <button type="button" className="btn btn-warning" onClick={showModal} id={data._id}>Redirigir</button> 
-                                <li className="nav-item">
-                                  <Link className="nav-link" to="/categories/:id/languages" >Redirigir</Link>
-               
-            </li>   
+                            <button type="button" className="btn btn-warning" onClick={showCTA} id={data._id}>Redirigir</button> 
                                
                             </td> 
                             

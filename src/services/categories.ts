@@ -46,3 +46,13 @@ export function deleteCategory(id: string): Promise<any>{
    // }
  // }
 //show category
+
+export function getNewPageLangCate(id: string): Promise<any>{
+    return new Promise<any>(resolve=>{   
+        axios.get(`${query}/category/${id}`)
+        .then(result=>{        
+            resolve(result.data);
+        })
+        .catch(error => resolve([]));
+    });
+}
