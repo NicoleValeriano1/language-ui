@@ -1,4 +1,7 @@
 import axios from "axios";
+import { createBrowserHistory } from 'history';
+import { resolve } from "dns";
+import Categories from "../views/categories";
 
 const query: string = "http://localhost:3001"
 
@@ -31,4 +34,15 @@ export function deleteCategory(id: string): Promise<any>{
         })
         .catch(error => resolve({successed:false}));
     });
-}
+}//show category
+
+
+//export function RedirigirCategory (id:string):Promise<any> {
+//    return new Promise<any>(resolve => {
+  //   axios
+    //  .post('/api/categories/redirigir', Categories)
+     // .then(response => history.pushState(''))
+     // .catch(err => resolve((err.response.data)));
+   // }
+ // }
+//show category

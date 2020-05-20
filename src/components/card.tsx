@@ -1,12 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom"
+import Categories from "../views/categories";
 
 interface ICardProps{
     title: string,
     description: string,
     category: string,
-    btn_label?: string
-    LanguageId?: string
+    btn_label?: string,
+    LanguageId?: string,
+    categoryId?:string
 }
 
 const Card:React.FC<ICardProps> = ({title,description,category, btn_label, LanguageId}) => {
@@ -28,7 +30,8 @@ const Card:React.FC<ICardProps> = ({title,description,category, btn_label, Langu
                         <Link to={`/languages/${LanguageId}/edit`}>Edit</Link>
                     ) }
                     
-                </div>
+                </div> 
+              
             </div>
         </div>
     )

@@ -1,9 +1,19 @@
 import React,{useState,useEffect} from "react";
+import {Link} from "react-router-dom";
 
 import {getCategoriesWLanguages, deleteCategory} from "../services/categories";
 import Modal from "./modal";
 
+interface ICardProps{
+
+    
+    
+    btn_labelL?: string,
+    categoryId?:string
+}
+
 const CategoryTable: React.FC = () => {
+    
 
     const [categories,setCategories] = useState([]);
     const [updatedCategories,setUpdatedCategories] = useState(false);
@@ -52,7 +62,12 @@ const CategoryTable: React.FC = () => {
       }
       
     }
+    
+   
 
+    
+    
+   
     /*********************** */
 
 
@@ -87,7 +102,8 @@ const CategoryTable: React.FC = () => {
                         <th scope="col">Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Languages Setted</th>
-                        <th scope="col"></th>                
+                        <th scope="col"></th>  
+                        <th scope="col">Redirigir</th>                
                     </tr>
                 </thead>
                 <tbody>
@@ -97,19 +113,25 @@ const CategoryTable: React.FC = () => {
                             <td>{data.name}</td>
                             <td>{data.l.length}</td>
                             <td>
-                                <button 
-                                type="button" 
-                                className="btn btn-danger" 
-                                onClick={showModal} 
-                                id={data._id}
-                                >Delete</button>
+                                <button type="button"className="btn btn-info"onClick={showModal} id={data._id}>Delete</button>
                             </td>
+                            <td>
+                            <button type="button" className="btn btn-warning" onClick={showModal} id={data._id}>Redirigir</button> 
+                                <li className="nav-item">
+                                  <Link className="nav-link" to="/categories/:id/languages" >Redirigir</Link>
+               
+            </li>   
+                               
+                            </td> 
+                            
+                            
                     </tr>
                     ))}
                                     
                 </tbody>
             </table>
         </div>
+        
 
         
     );
