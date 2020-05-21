@@ -15,6 +15,21 @@ export function getCategories(): Promise<any>{
         .catch(error => resolve([]));
     });
 }
+//PROBANDO FUNCION
+//........................................................
+//export function getALLCategories(): Promise<any>{
+//    return new Promise<any>(resolve=>{   
+ //       axios.get(`${query}/categories`)
+ //       .then(result=>{        
+ //           resolve(result.data);
+ //       })
+ //       .catch(error => resolve([]));
+ //   });
+//}
+
+
+//...........................................
+
 
 export function getCategoriesWLanguages(): Promise<any>{
     return new Promise<any>(resolve=>{   
@@ -25,6 +40,7 @@ export function getCategoriesWLanguages(): Promise<any>{
         .catch(error => resolve([]));
     });
 }
+
 
 export function deleteCategory(id: string): Promise<any>{
     return new Promise<any>(resolve=>{   

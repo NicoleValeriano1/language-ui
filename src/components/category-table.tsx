@@ -24,7 +24,7 @@ const CategoryTable: React.FC = () => {
     function hideModal(){
         setShowmodal(false);
     }
-    function showCTA(event:any){
+    function BotonPrueba(event:any){
         history.push(`/category/${event.target.id}`);
     }
     function showModal(event:any){
@@ -113,7 +113,7 @@ const CategoryTable: React.FC = () => {
                                 <button type="button"className="btn btn-info"onClick={showModal} id={data._id}>Delete</button>
                             </td>
                             <td>
-                            <button type="button" className="btn btn-warning" onClick={showCTA} id={data._id}>Redirigir</button> 
+                            <button type="button" className="btn btn-warning" onClick={BotonPrueba} id={data._id}>Redirigir</button> 
                                
                             </td> 
                             

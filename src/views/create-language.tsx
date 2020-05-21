@@ -8,7 +8,7 @@ import Footer from "../components/footer";
 import Subheader from "../components/subheader";
 import LanguageForm from "../components/language-form";
 
-
+import { useHistory } from "react-router-dom";
 import {deleteLanguage} from "../services/languages";
 
 const CreateLanguage: React.FC = () => {     
@@ -30,8 +30,15 @@ const CreateLanguage: React.FC = () => {
     }
   
     function showModal(){
+        
         setShowmodal(true);
+        
     }
+  
+    //Probando si da codigo con el history para direccionar todo el modal que se tiene
+    //con el boton y id agragado
+
+    const history = useHistory();
 
     function dropLanguage(){
         if(!completed){
@@ -91,10 +98,7 @@ const CreateLanguage: React.FC = () => {
                 />
 
                 <div className="container">
-                    <Subheader 
-                        title="Language Management" 
-                        deletebtn={needAction}
-                        fncbtn={showModal}
+                    <Subheader title="Language Management"deletebtn={needAction} fncbtn={showModal}
                     />
                     <div className="row">
                         <LanguageForm/>
