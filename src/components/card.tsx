@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import Categories from "../views/categories";
+//import Categories from "../views/categories";
 
 interface ICardProps{
     title: string,
@@ -8,7 +8,7 @@ interface ICardProps{
     category: string,
     btn_label?: string,
     LanguageId?: string,
-    categoryId?:string
+   // categoryId?:string
 }
 
 const Card:React.FC<ICardProps> = ({title,description,category, btn_label, LanguageId}) => {

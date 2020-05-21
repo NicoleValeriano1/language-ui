@@ -8,7 +8,7 @@ import Footer from "../components/footer";
 import Subheader from "../components/subheader";
 import LanguageForm from "../components/language-form";
 
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import {deleteLanguage} from "../services/languages";
 
 const CreateLanguage: React.FC = () => {     
@@ -38,7 +38,7 @@ const CreateLanguage: React.FC = () => {
     //Probando si da codigo con el history para direccionar todo el modal que se tiene
     //con el boton y id agragado
 
-    const history = useHistory();
+    //const history = useHistory();
 
     function dropLanguage(){
         if(!completed){

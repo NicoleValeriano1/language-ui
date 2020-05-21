@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createBrowserHistory } from 'history';
 import { resolve } from "dns";
-import Categories from "../views/categories";
+//import Categories from "../views/categories";
 
 const query: string = "http://localhost:3001"
 
